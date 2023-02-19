@@ -21,7 +21,7 @@
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
-                                    <th>Remove</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,19 +53,28 @@
                                                             <i class="fas fa-plus fa-sm"></i>
                                                         </button>
                                                     </div>
+                                                    @php
+                                                        $total += $cartItem->products->selling_price * $cartItem->product_qty;
+                                                    @endphp
                                                 @else
                                                     <div class="badge bg-danger text-white">Out of stock</div>
                                                 </div>
                                             @endif
-                                            @php
-                                                $total += $cartItem->products->selling_price * $cartItem->product_qty;
-                                            @endphp
+                                            
                                         </td>
                                         <td>
+                                            @if ($cartItem->products->qty >= $cartItem->product_qty)
                                             <a href="{{ url('delete_cart_item') }}"
                                                 class="delete_cart_item btn btn-sm btn-danger text-white">
                                                 <i class="fas fa-trash-alt fa-sm"></i>
                                             </a>
+                                            @else
+                                            <a href="{{ url('all_categories') }}"
+                                                class="btn btn-sm btn-secondary text-white">
+                                                Shop Now
+                                                <i class="fas fa-angle-right fa-sm"></i>
+                                            </a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
@@ -86,7 +95,7 @@
                 <div class="bg-white shadow-sm px-5 py-3 border rounded my-5 text-center">
                     <img src="{{asset('images/empty-cart.gif')}}" class="d-block mx-auto my-2" width="220px">
                     <h4 class="my-0">Cart is empty</h4>
-                    <a href="{{url('all_categories')}}" class="btn btn-md btn-info shadow-sm my-4">Continue shopping</a>
+                    <a href="{{url('all_categories')}}" class="btn btn-md bg-color text-white shadow-sm my-4">Continue shopping</a>
                 </div>
             </div>
         @endif

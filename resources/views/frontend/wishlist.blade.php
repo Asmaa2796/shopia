@@ -49,7 +49,7 @@
                 <div class="bg-white shadow-sm px-5 py-3 border rounded my-5 text-center">
                     <img src="{{ asset('images/wishlist-empty.gif') }}" class="d-block mx-auto my-2" width="220px">
                     <h4 class="my-0">Wishlist is empty</h4>
-                    <a href="{{ url('all_categories') }}" class="btn btn-md btn-info shadow-sm my-4">Continue shopping</a>
+                    <a href="{{ url('all_categories') }}" class="btn btn-md bg-color text-white shadow-sm my-4">Continue shopping</a>
                 </div>
             </div>
         @endif

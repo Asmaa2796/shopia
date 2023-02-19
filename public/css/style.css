@@ -119,6 +119,10 @@ a:hover {
     color: var(--main-color);
 }
 .custom-btn2:hover {color: var(--main-color);}
+
+.bg-color {background-color:var(--sub-color)}
+.bg-color1 {background-color:var(--main-color)}
+.sign {width: 60%;margin-top: 18%;}
 /* .custom-content .card {background-color: #fdfdfd;} */
 .no-label {
   cursor: pointer;
@@ -187,7 +191,7 @@ input[type="password"] {
   border: 1px solid #ddd;
   margin-bottom: 15px;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: 25px;
   width: 100%;
   padding: 0px 10px;
 }
@@ -207,9 +211,9 @@ textarea {
 
 input:focus,
 textarea:focus,
-select {
+select:focus {
   outline: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 form button,
@@ -231,7 +235,6 @@ button:focus {
 a:hover {
   text-decoration: none;
 }
-
 .loader {
   margin: auto;
   border: 16px solid #f3f3f3;
@@ -260,21 +263,37 @@ a:hover {
   transition: all .3s ease-in-out;
 }
 
-.navbar .nav-link {
+.navbar .navbar-nav:nth-child(1) .nav-link {
   font-size: 18px;
   margin: 0px 6px;
   color: #333 !important;
   transition: all .3s ease-in-out;
 }
 
-.navbar .nav-link:hover {
+.navbar .navbar-nav:nth-child(1) .nav-link:hover {
   color: var(--sub-color) !important;
 }
-
+.login_btn {
+  border: 1px solid var(--main-color);
+  border-radius: 25px;
+  padding: 3px 20px !important;
+  margin: 4px 5px 0;
+  display: inline-block;
+  color: var(--main-color) !important;
+}
+.signup_btn {
+  border: 1px solid var(--sub-color);
+  border-radius: 25px;
+  padding: 3px 20px !important;
+  margin: 4px 5px 0;
+  display: inline-block;
+  color: var(--sub-color) !important;
+}
 .navbar .navbar-brand img {
   width: 200px;
 }
 .navbar .navbar-toggler {border: none;}
+.dropdown-menu {right: 0;left: unset;}
 .navbar span img {width: 35px;}
 .icon {position: relative;}
 .icon img {width: 22px;}
@@ -809,4 +828,7 @@ footer p {color:#fff;line-height: 1.6em;font-size: 14px;text-align: center;margi
     display: block;
 }
 .product-card .tag {display: none;}
+.navbar-nav .icon {
+  margin: 0 6px;
+}
 }
